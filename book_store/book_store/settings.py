@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,6 +33,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "book_app.apps.BookAppConfig",
+    "rest_framework",
+    'api',
+    'file_app',
+    "rest_framework.authtoken",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -70,6 +75,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "book_store.wsgi.application"
 
+
+# location where we will store uploaded file
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
