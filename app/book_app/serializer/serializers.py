@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         depth = 1
-        fields = '__all__'
+        exclude = ['type']
 
 
 class BookSerializer(serializers.ModelSerializer):

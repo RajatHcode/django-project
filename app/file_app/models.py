@@ -9,7 +9,7 @@ class FileUpload(models.Model):
     created_on = models.DateTimeField(_("Created On"), auto_now_add=True)
 
     def __str__(self):
-        return self.file
+        return str(self.file)
 
     class Meta:
         verbose_name = _("Uploaded File")

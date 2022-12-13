@@ -38,8 +38,9 @@ class Book(models.Model):
     edition = models.IntegerField(_("Edition"), default=1, validators=[
                                   MinValueValidator(1), MaxValueValidator(20)])
     author = models.ForeignKey(
-        UserProfile, null=False, blank=False, on_delete=models.DO_NOTHING)
-    link = models.URLField(max_length=50, null=False, blank=False)
+        UserProfile, verbose_name="Created By", null=False, blank=False, on_delete=models.DO_NOTHING)
+    link = models.URLField(_("Book Link"), max_length=50,
+                           null=False, blank=False)
 
     created_on = models.DateTimeField(_("Created On"), auto_now_add=True)
     updated_on = models.DateTimeField(_("Updated On"), auto_now=True)
