@@ -21,6 +21,9 @@ from django.conf.urls.static import static
 from rest_framework.authtoken import views
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls',
+         'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('api-token-auth', views.obtain_auth_token),
     path('api/v1/', include('file_app.urls')),
