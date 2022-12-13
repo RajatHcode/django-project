@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import File
+from file_app.models import FileUpload
 
 
-class FileSerializer(serializers.ModelSerializer):
+class FileUploadSerializer(serializers.ModelSerializer):
     class Meta():
-        model = File
-        fields = ('file', 'remark', 'timestamp')
+        model = FileUpload
+        fields = '__all__'
